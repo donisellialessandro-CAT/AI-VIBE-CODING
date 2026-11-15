@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #f7f7f5;
+    --bg-surface: #ffffff;
+    --bg-subtle: #efefec;
+    --ink-primary: #171717;
+    --ink-secondary: #4a4a46;
+    --ink-muted: #6e6e68;
+    --border-hairline: #cfcfc8;
+    --border-strong: #171717;
+    --accent-red: #d62828;
+    --accent-red-dark: #a81c1c;
+    --font-display: 'Archivo', sans-serif;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-canvas);
+    color: var(--ink-primary);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-red);
+    outline-offset: 2px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Superstudio-inspired continuous orthogonal architectural drafting grid */
+.arch-grid-bg {
+  background-color: #f7f7f5;
+  background-image:
+    linear-gradient(to right, rgba(23, 23, 23, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(23, 23, 23, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.03) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+/* Architectural plate corner registration ticks */
+.arch-plate {
+  position: relative;
+}
+
+.arch-plate::before,
+.arch-plate::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  pointer-events: none;
+}
+
+.arch-plate::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #d62828;
+  border-left: 2px solid #d62828;
+}
+
+.arch-plate::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #171717;
+  border-right: 2px solid #171717;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

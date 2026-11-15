@@ -1,0 +1,6 @@
+{
+  "name": "INTERROGAMI! | LE CORBUSIER",
+  "description": "Applicazione web didattica interattiva sull'architettura moderna di Le Corbusier per studenti degli istituti tecnici CAT.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}
